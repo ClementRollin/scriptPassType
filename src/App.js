@@ -52,9 +52,12 @@ const CompteurPassType = () => {
 
   return (
     <div>
-      {Object.entries(compteurs).map(([type, compteur]) => (
-        <p key={type}>{`${type}: ${compteur}`}</p>
-      ))}
+      <h2>Compteurs par type de pass</h2>
+      <div>
+        {Object.entries(compteurs).map(([type, compteur]) => (
+          <p key={type}>{`${type}: ${compteur}`}</p>
+        ))}
+      </div>
     </div>
   );
 };
