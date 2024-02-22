@@ -1,37 +1,62 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
-function App() {
-  const [data, setData] = useState({});
-  
+const CompteurPassType = () => {
+  const [compteurs, setCompteurs] = useState({});
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://admin.neostore.cloud/api/demo/passes/passType', {
-          headers: { Authorization: 'Bearer 0L0pLvWByOnxU7weByZAjxhMfeIHv_r-oVZ2wgSvzK9c3ixgqoKG1ntNdLXACYoY' }
-        });
-        const counts = response.data.reduce((acc, { passType }) => {
-          acc[passType] = (acc[passType] || 0) + 1;
-          return acc;
-        }, {});
-        setData(counts);
-      } catch (error) {
-        console.error("Erreur lors de la récupération des données", error);
-      }
+    // Remplacer par une récupération réelle des données de l'API
+    const donneesMock = [
+      { passType: 'TypeA' },
+      { passType: 'TypeB' },
+      { passType: 'TypeA' },
+      { passType: 'TypeB' },
+      { passType: 'TypeC' },
+      { passType: 'TypeB' },
+      { passType: 'TypeA' },
+      { passType: 'TypeC' },
+      { passType: 'TypeC' },
+      { passType: 'TypeD' },
+      { passType: 'TypeA' },
+      { passType: 'TypeB' },
+      { passType: 'TypeA' },
+      { passType: 'TypeD' },
+      { passType: 'TypeD' },
+      { passType: 'TypeD' },
+      { passType: 'TypeC' },
+      { passType: 'TypeA' },
+      { passType: 'TypeC' },
+      { passType: 'TypeA' },
+      { passType: 'TypeD' },
+      { passType: 'TypeB' },
+      { passType: 'TypeB' },
+      { passType: 'TypeA' }
+    ];
+
+    const calculerCompteurs = (donnees) => {
+      const resultats = {};
+
+      donnees.forEach(({ passType }) => {
+        if (resultats[passType]) {
+          resultats[passType] += 1;
+        } else {
+          resultats[passType] = 1;
+        }
+      });
+
+      return resultats;
     };
-    fetchData();
+
+    const compteursCalculés = calculerCompteurs(donneesMock);
+    setCompteurs(compteursCalculés);
   }, []);
 
   return (
     <div>
-      <h1>Comptage des items par type de pass</h1>
-      <ul>
-        {Object.entries(data).map(([key, value]) => (
-          <li key={key}>{key}: {value}</li>
-        ))}
-      </ul>
+      {Object.entries(compteurs).map(([type, compteur]) => (
+        <p key={type}>{`${type}: ${compteur}`}</p>
+      ))}
     </div>
   );
-}
+};
 
-export default App;
+export default CompteurPassType;

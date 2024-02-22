@@ -18,6 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://admin.neostore.cloud",
   "eslintConfig": {
     "extends": [
       "react-app",
