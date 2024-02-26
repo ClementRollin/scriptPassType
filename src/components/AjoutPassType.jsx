@@ -16,7 +16,7 @@ const AjoutPassType = ({ ajouterPassType }) => {
         type="text"
         value={passType}
         onChange={(e) => setPassType(e.target.value)}
-        placeholder="Entrer un passType"
+        placeholder="Ajouter un passType"
       />
       <button onClick={handleSubmit}>Ajouter</button>
     </div>
