@@ -1,17 +1,176 @@
+/* Style de base pour l'application */
 body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
   margin: 0;
-  height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 20px;
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Style du composant CompteurPassType */
+.compteur-passType {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.compteur-passType h2 {
+  color: #007BFF;
+  margin-bottom: 20px;
+}
+
+/* Style des compteurs */
+.compteur-passType div {
+  margin-bottom: 10px;
+}
+
+.compteur-passType p {
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  color: #495057;
+}
+
+/* Style du formulaire d'ajout */
+.form-ajout {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-ajout input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  outline: none;
+}
+
+.form-ajout input:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.form-ajout button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-ajout button:hover {
+  background-color: #0056b3;
+}
+
+.erreur {
+  color: red;
+  margin-top: 10px;
+}
+
+.app {
+  text-align: center;
+}
+
+.ajout-pass-type, .modal-content, .tableau {
+  margin: 20px auto;
+  padding: 10px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tableau {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tableau h3 {
+  color: #333;
+}
+
+.tableau ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tableau ul li {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tableau ul li:last-child {
+  border-bottom: none;
+}
+
+.inputPassType {
+  padding: 10px;
+  width: 23%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnAjoutInput {
+  padding: 5px 10px;
+  margin: 0 5px 10px 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btnAjoutInput:hover {
+  background-color: #0056b3;
+}
+
+.ajoutTableau {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.ajoutTableau input {
+  width: 50%;
 }
